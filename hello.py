@@ -1,4 +1,5 @@
-from flask import Flask #Flask con F mayuscula es una app es una clase
+from flask import Flask, render_template #Flask con F mayuscula es una app es una clase
+
 
 app= Flask(__name__) #nos creamos la aplicación
 
@@ -15,3 +16,8 @@ def salida():
 @app.route("/doble/<numero>")
 def doble(numero):
     return str(numero*2)
+
+
+@app.route("/primerhtml")
+def primerhtml():
+    return render_template("hola.html")
